@@ -1,0 +1,28 @@
+# ---- Geral ----
+node_modules/
+npm-debug.log
+yarn-error.log
+dist/
+.env
+.env.local
+
+# ---- Laravel ----
+vendor/
+storage/
+bootstrap/cache/
+*.log
+
+# ---- Docker ----
+docker/*.pid
+*.pid
+*.log
+*.tmp
+
+# ---- IDEs ----
+.vscode/
+.idea/
+*.swp
+
+# ---- Sistema ----
+.DS_Store
+Thumbs.db
