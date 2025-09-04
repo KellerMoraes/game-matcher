@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y \
 # Instala Composer
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
-WORKDIR /var/www
+WORKDIR /var/www/laravel
 
-CMD ["php-fpm", "-y", "/usr/local/etc/php-fpm.conf", "-R"]
+CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8000"]
+

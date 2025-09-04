@@ -27,11 +27,12 @@ services:
       DB_DATABASE: game_matcher
       DB_USERNAME: postgres
       DB_PASSWORD: postgres
+    user: "${UID}:${GID}"
     volumes:
       - ./backend:/var/www
       - ./docker/php/local.ini:/usr/local/etc/php/conf.d/local.ini:ro
     ports:
-      - "9000:9000"
+      - "8000:8000"
     depends_on:
       - db
     networks:
