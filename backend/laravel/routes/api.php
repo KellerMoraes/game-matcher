@@ -1,4 +1,12 @@
 <?php
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
-Route::get('/users/{id}', [UserController::class, 'findById']);
+
+Route::prefix('users')->group(function(){
+    Route::get('/', [UserController::class, 'index']);
+    Route::get('{id}', [UserController::class, 'findById']);
+    Route::post('/', [UserController::class, 'store']);
+    Route::put('{id}', [UserController::class, 'update']);
+    Route::delete('{id}', [UserController::class, 'destroy']);
+
+});
