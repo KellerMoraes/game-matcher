@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreUserRequest;
+use App\Http\Requests\UpdateUserRequest;
 use OpenApi\Annotations as OA;
 use App\Services\UserService;
 use Illuminate\Http\JsonResponse;
@@ -61,7 +62,7 @@ class UserController extends Controller
 
     }
 
-    public function update(StoreUserRequest $request, int $id): JsonResponse
+    public function update(UpdateUserRequest $request, int $id): JsonResponse
     {
         $user = $this->userService->update($request->validated(),$id);
 
